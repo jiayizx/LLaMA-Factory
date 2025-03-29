@@ -8,6 +8,7 @@ do_train: true
 finetuning_type: full
 deepspeed: examples/deepspeed/ds_z3_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
 
+
 ### dataset
 dataset: persuasion_simulation
 template: llama3
@@ -15,6 +16,8 @@ cutoff_len: 4096
 max_samples: 10000
 overwrite_cache: true
 preprocessing_num_workers: 16
+train_on_prompt: true
+
 
 ### output
 output_dir: saves/llama3_1_8b/full/sft/persuasion_simulation
@@ -25,16 +28,20 @@ overwrite_output_dir: true
 
 ### train
 per_device_train_batch_size: 1
-gradient_accumulation_steps: 16
+gradient_accumulation_steps: 8
 learning_rate: 1.0e-5
-num_train_epochs: 3.0
+num_train_epochs: 5.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
 ddp_timeout: 180000000
+push_to_hub: true
+hub_model_id: "EleanorZzz/persuasion_simulation_sft_w_promp_5epochs"
+
 
 report_to: wandb
 run_name: llama3_1_8b-full-sft-persuasion-simulation
+
 ### eval
 # val_size: 0.1
 # per_device_eval_batch_size: 1
