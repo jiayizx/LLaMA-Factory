@@ -706,7 +706,7 @@
     "folder": "python"
   },
   "persuasion_simulation": {
-    "hf_hub_url": "EleanorZzz/persuasionforgood_simulation",
+    "hf_hub_url": "EleanorZzz/persuasion_simulation",
     "formatting": "sharegpt",
     "columns": {
       "messages": "messages"

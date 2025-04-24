@@ -1281,8 +1281,19 @@ register_template(
 
 register_template(
     name="olmo",
-    format_user=StringFormatter(slots=["<|user|>\n{{content}}<|assistant|>\n"]),
+    format_user=StringFormatter(slots=["<|user|>\n{{content}}\n<|assistant|>\n"]),
+    format_assistant=StringFormatter(slots=["{{content}}", {"eos_token"}, "\n"]),
+    format_system=StringFormatter(slots=["<|system|>\n{{content}}\n"]),
     format_prefix=EmptyFormatter(slots=[{"eos_token"}]),
+)
+
+
+register_template(
+    name="tulu",
+    format_user=StringFormatter(slots=["<|user|>\n{{content}}\n<|assistant|>\n"]),
+    format_assistant=StringFormatter(slots=["{{content}}", {"eos_token"}, "\n"]),
+    format_system=StringFormatter(slots=["<|system|>\n{{content}}\n"]),
+    format_prefix=EmptyFormatter(slots=[{"bos_token"}]),
 )
 
 

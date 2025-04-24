@@ -1,27 +1,25 @@
 ### model
-# model_name_or_path: allenai/Llama-3.1-Tulu-3-8B
-model_name_or_path: allenai/Llama-3.1-Tulu-3-8B-SFT
+model_name_or_path: meta-llama/Llama-3.1-8B-Instruct
 trust_remote_code: true
 
 ### method
 stage: sft
 do_train: true
-finetuning_type: full
+finetuning_type: lora
+lora_rank: 16
+lora_target: all
 deepspeed: examples/deepspeed/ds_z3_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
-
 
 ### dataset
 dataset: persuasion_simulation
-template: tulu
+template: llama3
 cutoff_len: 4096
 max_samples: 10000
 overwrite_cache: true
 preprocessing_num_workers: 16
-train_on_prompt: true
-
 
 ### output
-output_dir: saves/tulu_3_8b/full/sft/persuasion_simulation
+output_dir: saves/llama3_1_8b/lora/sft/persuasion_simulation
 logging_steps: 10
 save_strategy: "epoch"
 plot_loss: true
@@ -29,20 +27,16 @@ overwrite_output_dir: true
 
 ### train
 per_device_train_batch_size: 1
-gradient_accumulation_steps: 8
-learning_rate: 1.0e-5
-num_train_epochs: 10.0
+gradient_accumulation_steps: 16
+learning_rate: 5.0e-5
+num_train_epochs: 5.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
 ddp_timeout: 180000000
-push_to_hub: true
-hub_model_id: "EleanorZzz/persuasion_simulation_tulu3_8b_sft_sft_w_promp_10epochs"
-
 
 report_to: wandb
-run_name: tulu_3_8b_sft_sft_w_promp_10epochs
-
+run_name: llama3_1_8b_lora_w_promp_5epochs
 ### eval
 # val_size: 0.1
 # per_device_eval_batch_size: 1
