@@ -31,17 +31,17 @@ overwrite_output_dir: true
 per_device_train_batch_size: 1
 gradient_accumulation_steps: 8
 learning_rate: 1.0e-5
-num_train_epochs: 10.0
+num_train_epochs: 3.0
 lr_scheduler_type: cosine
 warmup_ratio: 0.1
 bf16: true
 ddp_timeout: 180000000
 push_to_hub: true
 # resume_from_checkpoint: null
-hub_model_id: "EleanorZzz/persuasion_simulation_qwen2.5-7b_sft_w_promp_10epochs"
+hub_model_id: "EleanorZzz/persuasion_simulation_qwen2.5_7b_sft_w_promp_3epochs"
 
 report_to: wandb
-run_name: tulu_3_8b_sft_w_promp_10epochs
+run_name: qwen2.5_7b_sft_w_promp_3epochs
 
 ### eval
 # val_size: 0.1
