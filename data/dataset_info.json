@@ -714,5 +714,61 @@
       "prompt": "content"
     },
     "folder": "python"
+  },
+  "gsm8k_training_positive_1k": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_positive_1k",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_synthetic_positive_direct": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_synthetic_positive_direct",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_synthetic_positive_multi_turn": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_synthetic_positive_multi_turn",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_synthetic_positive_sequence": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_synthetic_positive_sequence",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_synthetic_positive_vs_standard": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_synthetic_positive_vs_standard",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_synthetic_positive_vs_multi": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_synthetic_positive_vs_multi",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "system": "system"
+    }
+  },
+  "gsm8k_training_negative_kto": {
+    "hf_hub_url": "EleanorZzz/gsm8k_training_negative_kto",
+    "columns": {
+      "prompt": "instruction",
+      "response": "output",
+      "kto_tag": "kto_tag"
+    }
   }
 }
